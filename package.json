@@ -1,5 +1,5 @@
 {
-  "name": "MazeGenerator",
+  "name": "maze-generator",
   "version": "1.0.0",
   "description": "Generator i solver labiryntów w TypeScript",
   "main": "dist/index.js",
