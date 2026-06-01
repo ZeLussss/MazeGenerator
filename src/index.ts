@@ -1,24 +1,16 @@
-import { Cell } from "./core/Cell";
-import { DisjointSet } from "./structures/DisjointSet";
+import { Maze } from "./maze/Maze";
 
-const a = new Cell( 0, 0 );
-const b = new Cell( 1, 0 );
-const c = new Cell( 0, 1 );
+class TestMaze extends Maze
+{
+    generate(): void
+    {
+    }
+}
 
-const ds = new DisjointSet< Cell >();
+const maze = new TestMaze( 3, 2 );
 
-ds.makeSet( a );
-ds.makeSet( b );
-ds.makeSet( c );
+console.log( maze.width() );
+console.log( maze.height() );
 
-console.log( ds.find( a ) === a );
-console.log( ds.find( b ) === b );
-console.log( ds.find( c ) === c );
-
-console.log( ds.union( a, b ) );
-console.log( ds.find( a ) === ds.find( b ) );
-
-console.log( ds.union( a, b ) );
-
-console.log( ds.union( b, c ) );
-console.log( ds.find( a ) === ds.find( c ) );
+console.log( maze.cell( 0, 0 ).x(), maze.cell( 0, 0 ).y() );
+console.log( maze.cell( 2, 1 ).x(), maze.cell( 2, 1 ).y() );
