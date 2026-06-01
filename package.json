@@ -1,21 +1,27 @@
 {
-  "name": "mazegenerator",
+  "name": "MazeGenerator",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  
+  "description": "Generator i solver labiryntów w TypeScript",
+  "main": "dist/index.js",
+  "type": "module",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsc --watch"
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
   },
-
-  "keywords": [],
+  "keywords": [
+    "typescript",
+    "maze",
+    "kruskal",
+    "astar",
+    "dijkstra"
+  ],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
-    "@types/node": "^25.8.0",
-    "typescript": "^6.0.3"
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
   }
 }

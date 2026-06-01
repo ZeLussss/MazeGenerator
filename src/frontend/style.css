@@ -1,0 +1,281 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    color: #111827;
+}
+
+body {
+    overflow: hidden;
+}
+
+.app {
+    height: 100vh;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 8px;
+}
+
+.header {
+    padding: 10px 14px;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.layout {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 270px minmax(0, 1fr);
+    gap: 8px;
+}
+
+.side-panel {
+    min-height: 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 8px;
+}
+
+.controls {
+    padding: 10px;
+    display: grid;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+.controls label {
+    display: grid;
+    gap: 4px;
+    font-size: 13px;
+    color: #374151;
+}
+
+.controls input {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.controls input:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+button {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+#generateButton {
+    background: #111827;
+}
+
+#generateButton:hover {
+    background: #374151;
+}
+
+#animateAStarButton,
+#animateDijkstraButton {
+    background: #2563eb;
+}
+
+#animateAStarButton:hover,
+#animateDijkstraButton:hover {
+    background: #1d4ed8;
+}
+
+#compareButton {
+    background: #7c3aed;
+}
+
+#compareButton:hover {
+    background: #6d28d9;
+}
+
+#downloadButton {
+    background: #059669;
+}
+
+#downloadButton:hover {
+    background: #047857;
+}
+
+.stats {
+    min-height: 0;
+    overflow: auto;
+    display: grid;
+    gap: 8px;
+    align-content: start;
+}
+
+.stat-card,
+.legend {
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+.stat-card h2,
+.legend h2,
+.maze-card h2 {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+.stat-card p,
+.legend p {
+    margin: 4px 0;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+.stat-card strong {
+    font-weight: 700;
+}
+
+.maze-grid {
+    min-width: 0;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px;
+}
+
+.maze-card {
+    min-width: 0;
+    min-height: 0;
+    padding: 8px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+.canvas-wrapper {
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+}
+
+canvas {
+    display: block;
+    background: #ffffff;
+}
+
+.dot {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 7px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.visited-dot {
+    background: #fde68a;
+}
+
+.path-dot {
+    background: #f97316;
+}
+
+.start-dot {
+    background: #22c55e;
+}
+
+.goal-dot {
+    background: #ef4444;
+}
+
+.footer {
+    padding: 8px 12px;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 12px;
+    text-align: center;
+    color: #374151;
+}
+
+@media (max-width: 1000px) {
+    body {
+        height: auto;
+        overflow: auto;
+    }
+
+    .app {
+        height: auto;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .side-panel {
+        grid-template-rows: auto auto;
+    }
+
+    .maze-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .canvas-wrapper {
+        max-height: 65vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .app {
+        padding: 8px;
+    }
+
+    .header h1 {
+        font-size: 19px;
+    }
+
+    .layout,
+    .side-panel,
+    .maze-grid {
+        gap: 8px;
+    }
+}

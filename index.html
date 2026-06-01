@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generator i solver labiryntów</title>
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>Generator i solver labiryntów</h1>
+        </header>
+
+        <main class="layout">
+            <section class="side-panel">
+                <div class="controls">
+                    <label>
+                        Szerokość
+                        <input id="widthInput" type="number" value="25" min="2" max="80" />
+                    </label>
+
+                    <label>
+                        Wysokość
+                        <input id="heightInput" type="number" value="18" min="2" max="80" />
+                    </label>
+
+                    <button id="generateButton">Generuj</button>
+                    <button id="animateAStarButton">Animuj A*</button>
+                    <button id="animateDijkstraButton">Animuj Dijkstrę</button>
+                    <button id="compareButton">Porównaj oba</button>
+                    <button id="downloadButton">Pobierz PNG</button>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <h2>A*</h2>
+                        <p>Długość ścieżki: <strong id="astarLength">—</strong></p>
+                        <p>Odwiedzone komórki: <strong id="astarVisited">—</strong></p>
+                        <p>Czas: <strong id="astarTime">—</strong></p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h2>Dijkstra</h2>
+                        <p>Długość ścieżki: <strong id="dijkstraLength">—</strong></p>
+                        <p>Odwiedzone komórki: <strong id="dijkstraVisited">—</strong></p>
+                        <p>Czas: <strong id="dijkstraTime">—</strong></p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h2>Różnica</h2>
+                        <p id="differenceText">Brak danych.</p>
+                    </div>
+
+                    <div class="legend">
+                        <p><span class="dot visited-dot"></span> Odwiedzone komórki</p>
+                        <p><span class="dot path-dot"></span> Znaleziona ścieżka</p>
+                        <p><span class="dot start-dot"></span> Start</p>
+                        <p><span class="dot goal-dot"></span> Koniec</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="maze-grid">
+                <div class="maze-card">
+                    <h2>A*</h2>
+
+                    <div class="canvas-wrapper">
+                        <canvas id="astarCanvas"></canvas>
+                    </div>
+                </div>
+
+                <div class="maze-card">
+                    <h2>Dijkstra</h2>
+
+                    <div class="canvas-wrapper">
+                        <canvas id="dijkstraCanvas"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            Projekt MazeGenerator na przedmiot Metody Programowania. Autorzy: Ksawery Zelek oraz Bartłomiej Mróz. Politechnika Krakowska 2026
+        </footer>
+    </div>
+
+    <script type="module" src="/src/frontend/main.ts"></script>
+</body>
+</html>
