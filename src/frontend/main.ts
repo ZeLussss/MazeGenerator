@@ -307,7 +307,7 @@ function animateBoth(
 
             index++;
 
-            setTimeout( step, 30 );
+            setTimeout( step, 5 );
         }
         else
         {
