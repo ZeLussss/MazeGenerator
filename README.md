@@ -13,6 +13,12 @@ Projekt został przygotowany w ramach przedmiotu **Metody Programowania**.
 
 ---
 
+## Strona Internetowa
+
+https://zelussss.github.io/MazeGenerator/
+
+---
+
 ## Opis projektu
 
 Aplikacja pozwala na generowanie labiryntów oraz porównywanie działania dwóch algorytmów znajdowania najkrótszej ścieżki:
